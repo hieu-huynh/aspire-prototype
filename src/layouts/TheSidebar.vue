@@ -1,0 +1,68 @@
+<template>
+  <q-drawer persistent show-if-above bordered :width="340" content-class="bg-blue-10 q-pa-xl">
+    <div class="branding">
+      <img height="35px" :src="require('@/assets/logo.png')" />
+
+      <p class="text-subtitle1">Trusted way of banking for 3,000+ SMEs and startups in Singapore</p>
+    </div>
+
+    <nav class="main-navigation">
+      <router-link to="#" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path
+            d="M12,24A12,12,0,0,1,3.515,3.516,12,12,0,0,1,20.485,20.487,11.922,11.922,0,0,1,12,24ZM10.453,9.746v8.837a1.162,1.162,0,0,0,1.161,1.161h.775a1.162,1.162,0,0,0,1.161-1.161V9.746l3.5,3.652a1.159,1.159,0,0,0,1.659.021l.527-.533a1.161,1.161,0,0,0,.342-.827,1.142,1.142,0,0,0-.342-.812L12.823,4.825a1.159,1.159,0,0,0-1.64,0L4.757,11.247a1.155,1.155,0,0,0-.342.824,1.142,1.142,0,0,0,.342.815l.527.533a1.166,1.166,0,0,0,.823.339,1.151,1.151,0,0,0,.842-.36l3.5-3.65Z"
+          />
+        </svg>
+
+        <p class="text-white text-body1">Credit</p>
+      </router-link>
+
+      <router-link to="#" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24.25" viewBox="0 0 24 24.25">
+          <path
+            d="M35.169,10A11.837,11.837,0,0,0,23.5,22,11.838,11.838,0,0,0,35.167,34a11.33,11.33,0,0,0,6.651-2.2c.5-.473.811-.529.811-1.041l.007-.1a1.075,1.075,0,0,0-1.06-1.09,1.026,1.026,0,0,0-.764.343,9.322,9.322,0,0,1-5.633,1.9,9.7,9.7,0,0,1-9.563-9.833,9.567,9.567,0,1,1,19.127,0,10.009,10.009,0,0,1-.921,4.19,9.724,9.724,0,0,0-.49,1.185l-.007.1a1.078,1.078,0,0,0,1.063,1.092,1.054,1.054,0,0,0,1-.776l0,0A12.189,12.189,0,0,0,46.836,22,11.835,11.835,0,0,0,35.169,10ZM28.653,20.7a1.045,1.045,0,0,0,.3.676,1.026,1.026,0,0,0,.676.3h0a.791.791,0,0,0,.108,0l10.8,0a1.033,1.033,0,1,0,0-2.067l-8.437.012,1.222-1.234a1,1,0,0,0-1.413-1.413l-2.956,2.983a.988.988,0,0,0-.289.632l-.007,0a.654.654,0,0,0,0,.11ZM36.9,27.591a1,1,0,0,0,1.416,0l2.958-2.978a1,1,0,0,0,.289-.629l.007,0s0-.073,0-.108h0a1.039,1.039,0,0,0-.3-.673,1.05,1.05,0,0,0-.676-.3h0a.791.791,0,0,0-.108,0l-10.8,0a1.031,1.031,0,1,0,0,2.062l8.439-.012-1.222,1.237A.987.987,0,0,0,36.9,27.591Z"
+            transform="translate(-23.169 -9.875)"
+          />
+        </svg>
+
+        <p class="text-white text-body1">Payments</p>
+      </router-link>
+    </nav>
+  </q-drawer>
+</template>
+
+<style lang="scss" scoped>
+.branding {
+  display: grid;
+  gap: 20px;
+  .text-subtitle1 {
+    color: rgba(#ffffff, 0.3);
+  }
+}
+
+.main-navigation {
+  display: grid;
+  gap: 62px;
+
+  margin-top: 81px;
+}
+
+.nav-item {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 24px) minmax(0, 1fr);
+  align-content: center;
+
+  svg {
+    fill: white;
+  }
+
+  &:hover {
+    svg,
+    p {
+      fill: var(--q-color-primary);
+      color: var(--q-color-primary) !important;
+    }
+  }
+}
+</style>
