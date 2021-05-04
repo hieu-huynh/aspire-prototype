@@ -2,8 +2,8 @@ import $router from '@/router';
 import { addWeeks } from 'date-fns';
 
 const initialState = {
-  amount: 23424,
-  tenor: 3,
+  amount: 0,
+  tenor: 0,
 };
 
 const mutations = {

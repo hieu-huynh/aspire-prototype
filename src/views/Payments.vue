@@ -1,12 +1,6 @@
 <template>
   <page-container heading="Payments">
-    <q-table
-      v-if="!!mortgageList.length"
-      :data="mortgageList"
-      :columns="columns"
-      row-key="index"
-      :pagination="pagination"
-    >
+    <q-table :data="mortgageList" :columns="columns" row-key="index" :pagination="pagination">
       <template #body-cell-action="{ row }">
         <td class="text-right">
           <q-btn @click="repayLoan(row)">Repay</q-btn>
@@ -18,7 +12,7 @@
 <script>
 import PageContainer from '@/layouts/-components/PageContainer.vue';
 import { format } from 'date-fns';
-import { mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   components: { PageContainer },
@@ -55,6 +49,14 @@ export default {
       },
       mortgageList: [],
     };
+  },
+  computed: {
+    ...mapState('mortgage', ['amount']),
+  },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      if (!vm.amount) next({ name: 'mortgage' });
+    });
   },
   async created() {
     this.mortgageList = await this.getRepaymentList();

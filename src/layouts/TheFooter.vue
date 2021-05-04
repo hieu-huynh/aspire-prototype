@@ -1,5 +1,5 @@
 <template>
-  <q-footer elevated v-if="this.$q.screen.lt.md" class="the-footer bg-white">
+  <q-footer v-if="this.$q.screen.lt.md" elevated class="the-footer bg-white">
     <nav class="main-navigation">
       <router-link to="/mortgage" class="nav-item no-un">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

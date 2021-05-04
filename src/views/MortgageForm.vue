@@ -3,14 +3,19 @@
     <form class="mortgage-form" @submit.prevent="handleBorrowing">
       <div class="form-control">
         <label for="amount">Amount</label>
-        <q-input v-model.number="$v.model.amount.$model" id="amount" type="number" />
+        <q-input
+          id="amount"
+          v-model.number="$v.model.amount.$model"
+          type="number"
+          hint="Minimum amount is 4,000$"
+        />
       </div>
 
       <div class="form-control">
         <label for="tenor">Tenor</label>
         <q-option-group
-          v-model="model.tenor"
           id="tenor"
+          v-model="model.tenor"
           :options="tenorOptions"
           color="primary"
           inline
@@ -53,7 +58,7 @@ export default {
   },
   validations: {
     model: {
-      amount: { required, minValue: minValue(1) },
+      amount: { required, minValue: minValue(4000) },
     },
   },
   computed: {
