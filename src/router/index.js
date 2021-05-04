@@ -10,6 +10,11 @@ const routes = [
     redirect: { name: 'mortgage' },
   },
   {
+    path: '/card',
+    name: 'debit-card',
+    component: () => import('../views/DebitCard/DebitCard.vue'),
+  },
+  {
     path: '/mortgage',
     name: 'mortgage',
     component: () => import('../views/MortgageForm.vue'),

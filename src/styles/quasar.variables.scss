@@ -5,17 +5,26 @@ $primary: #01d167;
 $secondary: #222222;
 $accent: #9c27b0;
 
-$dark: #1d1d1d;
+$dark: #222222;
 
 $positive: #21ba45;
 $negative: #c10015;
-$info: #31ccec;
+$info: #23cefd;
 $warning: #f2c037;
 
 $blue-10: #0c365a;
+$blue-9: #25345f;
+
+$light-green-1: #01d16726;
 
 $grey-1: #dddddd;
+$grey-2: #22222233;
+$grey-3: #f1f1f1;
+$grey-4: rgba(34, 34, 34, 0.4);
 
+$text-h5: 26px;
+$text-h6: 22px;
 $text-subtitle1: 15px;
+$text-caption: 8px;
 
 @import '~quasar-variables-styl';

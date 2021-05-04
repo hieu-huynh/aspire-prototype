@@ -4,9 +4,11 @@
       {{ heading }}
     </h1>
 
-    <div :small="isMobile" class="page-content">
-      <slot />
-    </div>
+    <slot name="content" :is-mobile="isMobile">
+      <div :small="isMobile" class="page-content">
+        <slot />
+      </div>
+    </slot>
   </q-page>
 </template>
 
@@ -46,7 +48,7 @@ export default {
   box-shadow: 0 3px 16px #00000014;
 
   &[small] {
-    margin: 0;
+    margin: 24px 0 0 0;
     padding: 24px;
     box-shadow: none;
     background-color: white;
