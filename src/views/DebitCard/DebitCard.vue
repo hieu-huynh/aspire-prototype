@@ -6,7 +6,7 @@
 
         <card-manage />
 
-        <div class="mask"></div>
+        <div v-if="isMobile" class="mask"></div>
       </div>
     </template>
   </page-container>
@@ -28,12 +28,24 @@ export default {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
 
+  margin: 40px 0 0 0;
+  padding: 40px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 3px 16px #00000014;
+
   &[small] {
     gap: 34px;
     grid-template-columns: auto;
     grid-auto-flow: row;
-    margin-top: 24px;
+    margin: 24px 0 0 0;
     padding: 24px;
+
+    box-shadow: none;
+    border-radius: 24px 24px 0 0;
+
+    background-color: transparent;
   }
 }
 

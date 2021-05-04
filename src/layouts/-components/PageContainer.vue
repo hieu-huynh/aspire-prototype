@@ -40,6 +40,8 @@ export default {
 }
 
 .page-content {
+  min-height: 100vh;
+
   margin: 40px 0 0 0;
   padding: 40px;
 
