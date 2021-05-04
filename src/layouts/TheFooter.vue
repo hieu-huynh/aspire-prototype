@@ -1,20 +1,14 @@
 <template>
-  <q-drawer persistent show-if-above bordered :width="340" content-class="bg-blue-10 q-pa-xl">
-    <div class="branding">
-      <img height="35px" :src="require('@/assets/logo.png')" />
-
-      <p class="text-subtitle1">Trusted way of banking for 3,000+ SMEs and startups in Singapore</p>
-    </div>
-
+  <q-footer elevated v-if="this.$q.screen.lt.md" class="the-footer bg-white">
     <nav class="main-navigation">
-      <router-link to="/mortgage" class="nav-item">
+      <router-link to="/mortgage" class="nav-item no-un">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path
             d="M12,24A12,12,0,0,1,3.515,3.516,12,12,0,0,1,20.485,20.487,11.922,11.922,0,0,1,12,24ZM10.453,9.746v8.837a1.162,1.162,0,0,0,1.161,1.161h.775a1.162,1.162,0,0,0,1.161-1.161V9.746l3.5,3.652a1.159,1.159,0,0,0,1.659.021l.527-.533a1.161,1.161,0,0,0,.342-.827,1.142,1.142,0,0,0-.342-.812L12.823,4.825a1.159,1.159,0,0,0-1.64,0L4.757,11.247a1.155,1.155,0,0,0-.342.824,1.142,1.142,0,0,0,.342.815l.527.533a1.166,1.166,0,0,0,.823.339,1.151,1.151,0,0,0,.842-.36l3.5-3.65Z"
           />
         </svg>
 
-        <p class="text-white text-body1">Credit</p>
+        <p class="text-grey-1 text-body1">Credit</p>
       </router-link>
 
       <router-link to="/payments" class="nav-item">
@@ -25,36 +19,31 @@
           />
         </svg>
 
-        <p class="text-white text-body1">Payments</p>
+        <p class="text-grey-1 text-body1">Payments</p>
       </router-link>
     </nav>
-  </q-drawer>
+  </q-footer>
 </template>
 
 <style lang="scss" scoped>
-.branding {
-  display: grid;
-  gap: 20px;
-  .text-subtitle1 {
-    color: rgba(#ffffff, 0.3);
-  }
+.the-footer {
+  padding: 8px 30px;
 }
 
 .main-navigation {
   display: grid;
-  gap: 62px;
-
-  margin-top: 81px;
+  grid-auto-flow: column;
 }
 
 .nav-item {
   display: grid;
-  gap: 16px;
-  grid-template-columns: minmax(0, 24px) minmax(0, 1fr);
+  gap: 4px;
+  grid-template-rows: minmax(0, 24px) minmax(0, 1fr);
+  justify-items: center;
   align-content: center;
 
   svg {
-    fill: white;
+    fill: #dddddd;
   }
 
   &.router-link-active,

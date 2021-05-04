@@ -1,24 +1,10 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy">
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          aria-label="Menu"
-          icon="menu"
-        />
-
-        <q-toolbar-title>Quasar App</q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
+  <q-layout :small="this.$q.screen.lt.md" view="lHh Lpr lFf">
+    <the-header />
 
     <the-sidebar />
 
+    <the-footer />
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -27,10 +13,16 @@
 
 <script>
 import TheSidebar from './layouts/TheSidebar.vue';
+import TheHeader from './layouts/TheHeader.vue';
+import TheFooter from './layouts/TheFooter.vue';
 export default {
   name: 'LayoutDefault',
-  components: { TheSidebar },
+  components: { TheFooter, TheHeader, TheSidebar },
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.q-layout[small] {
+  background-color: #0c365a;
+}
+</style>

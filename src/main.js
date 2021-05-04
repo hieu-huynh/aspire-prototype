@@ -1,12 +1,15 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './quasar'
-import router from './router'
-import './quasar'
+import Vue from 'vue';
+import App from './App.vue';
+import './plugins/quasar';
+import './plugins/vuelidate';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+import router from './router';
+import store from './store';
 
 new Vue({
   router,
-  render: h => h(App)
-}).$mount('#app')
+  store,
+  render: (h) => h(App),
+}).$mount('#app');

@@ -7,15 +7,17 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    redirect: { name: 'Mortgage' },
+    redirect: { name: 'mortgage' },
   },
   {
     path: '/mortgage',
-    name: 'Mortgage',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    name: 'mortgage',
     component: () => import('../views/MortgageForm.vue'),
+  },
+  {
+    path: '/payments',
+    name: 'payments',
+    component: () => import('../views/Payments.vue'),
   },
 ];
 
